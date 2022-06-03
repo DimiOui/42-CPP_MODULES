@@ -20,3 +20,5 @@ int	main()
 	}
 	return (0);
 }
+
+//NEED TO FIX: CONTACTS ARE GETTING ADDED EVEN IF EMPTY.
