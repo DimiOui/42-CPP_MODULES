@@ -26,7 +26,7 @@ public:
 
     bool                        get_contact(int index);
     void                        print_contact();
-    void                        print_contacttable();
+    void                        print_contact_table();
 
 private:
     int                         index;

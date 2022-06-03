@@ -31,7 +31,7 @@ void	PhoneBook::header()
 	std::cout << KBLU "*********************************************" << std::endl;
 	std::cout << KBLU "|     Index|First Name| Last Name|  Nickname|" << std::endl;
 	for (int i = 0; i < this->contact_count; i++)
-		this->contacts[i].print_contacttable();
+		this->contacts[i].print_contact_table();
 	std::cout << KBLU "*********************************************" << std::endl;
 }
 

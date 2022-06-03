@@ -42,7 +42,7 @@ bool	Contact::get_contact(int index)
 
 }
 
-void	Contact::print_contacttable()
+void	Contact::print_contact_table()
 {
 	std::cout << "|" << std::setw(10) << this->index;
 	for (int i = First; i <= Nick; i++)
