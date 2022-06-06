@@ -20,16 +20,12 @@ Contact::~Contact()
 
 bool	Contact::get_contact(int index)
 {
-	int	emptycheck;
-
 	this->index = index;
 	for (int i = First; i <= Secret; i++)
 	{
-		emptycheck = 0;
 		std::cout << Contact::contact_head[i] << ": ";
 		std::getline(std::cin, this->contact_input[i]);
-		emptycheck += this->contact_input[i].length();
-		if (emptycheck == 0)
+		if (contact_input[i].empty())
 		{
 			//for (int i = First; i <= Secret; i++)
 			//	this->contact_input[i].clear(); // Why isn't it needed to clear the contact input ?
