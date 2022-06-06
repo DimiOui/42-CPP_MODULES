@@ -3,6 +3,7 @@
 PhoneBook::PhoneBook()
 {
 	this->contact_count = 0;
+	this->iter = 0;
 }
 
 PhoneBook::~PhoneBook()
@@ -23,7 +24,12 @@ void	PhoneBook::add_contact()
 			this->contact_count++;
 	}
 	else
-		std::cout << KRED "Le VERY LAME PHONEBOOK is already full." KCYN << std::endl;
+	{
+		if (this->contacts[this->iter].get_contact(this->iter + 1))
+			this->iter++;
+		if (this->iter == 8)
+			this->iter = 0;
+	}
 }
 
 void	PhoneBook::header()

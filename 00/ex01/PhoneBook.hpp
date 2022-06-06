@@ -33,6 +33,7 @@ public:
 private:
     Contact contacts[8];
     int     contact_count;
+    int     iter;
 
 };
 
