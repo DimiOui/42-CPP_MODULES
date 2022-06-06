@@ -29,13 +29,15 @@ bool	Contact::get_contact(int index)
 		std::cout << Contact::contact_head[i] << ": ";
 		std::getline(std::cin, this->contact_input[i]);
 		emptycheck += this->contact_input[i].length();
-		if (std::cin.eof())
-			return (false);
 		if (emptycheck == 0)
 		{
+			for (int i = First; i <= Secret; i++)
+				this->contact_input[i].clear();
 			std::cout << KRED "Empty fields are forbidden, return to phonebook." KCYN << std::endl;
 			return (false);
 		}
+		if (std::cin.eof())
+			return (false);
 	}
 	std::cout << KGRN "Contact added. " KCYN << std::endl;
 	return (true);

@@ -19,8 +19,8 @@ void	PhoneBook::add_contact()
 {
 	if (this->contact_count < 8)
 	{
-		this->contacts[this->contact_count].get_contact(this->contact_count + 1);
-		this->contact_count++;
+		if (this->contacts[this->contact_count].get_contact(this->contact_count + 1))
+			this->contact_count++;
 	}
 	else
 		std::cout << KRED "Le VERY LAME PHONEBOOK is already full." KCYN << std::endl;
