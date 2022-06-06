@@ -31,8 +31,8 @@ bool	Contact::get_contact(int index)
 		emptycheck += this->contact_input[i].length();
 		if (emptycheck == 0)
 		{
-			for (int i = First; i <= Secret; i++)
-				this->contact_input[i].clear();
+			//for (int i = First; i <= Secret; i++)
+			//	this->contact_input[i].clear(); // Why isn't it needed to clear the contact input ?
 			std::cout << KRED "Empty fields are forbidden, return to phonebook." KCYN << std::endl;
 			return (false);
 		}
