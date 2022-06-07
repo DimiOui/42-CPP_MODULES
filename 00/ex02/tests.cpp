@@ -46,32 +46,32 @@ int		main( void ) {
 	std::for_each( acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus ) );
 
 //LOG line 18 TO 25 -- Make deposit
-	for ( acc_int_t it( acc_begin, dep_begin );
+	for (acc_int_t it(acc_begin, dep_begin);
 		  it.first != acc_end && it.second != dep_end;
 		  ++(it.first), ++(it.second) )
 	{
-		(*(it.first)).makeDeposit( *(it.second) );
+		(*(it.first)).makeDeposit(*(it.second));
 	}
 
 //LOG line 26
 	Account::displayAccountsInfos();
 
 //LOG line 27 to 34 -- Account status
-	std::for_each( acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus ) );
+	std::for_each(acc_begin, acc_end, std::mem_fun_ref(&Account::displayStatus));
 
 //LOG line 35 to 42 -- Make withdrawall
-	for ( acc_int_t it( acc_begin, wit_begin );
+	for ( acc_int_t it(acc_begin, wit_begin);
 		  it.first != acc_end && it.second != wit_end;
-		  ++(it.first), ++(it.second) )
+		  ++(it.first), ++(it.second))
 	{
-		(*(it.first)).makeWithdrawal( *(it.second) );
+		(*(it.first)).makeWithdrawal(*(it.second));
 	}
 
 //LOG line 43
 	Account::displayAccountsInfos();
 
 //LOG line 44 to 51 -- Account status
-	std::for_each( acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus ) );
+	std::for_each(acc_begin, acc_end, std::mem_fun_ref(&Account::displayStatus));
 
 	return 0;
 //LOG line 51 to END -- destructor called
