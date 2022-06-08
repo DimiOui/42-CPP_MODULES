@@ -10,4 +10,7 @@ int	main()
 
 	std::cout << "Third Zombie" << std::endl;
 	randomChump("3");
+
+	std::cout << "need to delete this one (pointer) -- ";
+	delete zombie_2;
 }
