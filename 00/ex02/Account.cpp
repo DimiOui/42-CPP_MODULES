@@ -20,10 +20,10 @@ Account::Account(int initial_deposit) : _accountIndex(Account::_nbAccounts),
 
 Account::~Account()
 {
-	Account::_totalAmount = this->_amount;
 	Account::_displayTimestamp();
+	Account::_totalAmount = this->_amount;
 	std::cout << "index:" << this->_accountIndex <<  ";";
-	std::cout << "amount:" << this->_totalAmount << ";"; //Need to update amount
+	std::cout << "amount:" << this->_totalAmount << ";";
 	std::cout << "closed" << std::endl;
 
 }
@@ -77,7 +77,7 @@ bool	Account::makeWithdrawal(int withdrawal)
 	Account::_displayTimestamp();
 	std::cout << "index:" << this->_accountIndex << ";";
 	std::cout << "p_amount:" << Account::checkAmount() << ";";
-	std::cout << "withdrawal:" << withdrawal << ";";
+	std::cout << "withdrawal:";
 	if (Account::checkAmount() - withdrawal < 0)
 		{
 			std::cout << "refused" << std::endl;
@@ -85,7 +85,8 @@ bool	Account::makeWithdrawal(int withdrawal)
 		}
 	else
 	{
-		this->_amount += withdrawal;
+		std::cout << withdrawal << ";";
+		this->_amount -= withdrawal;
 		Account::_totalAmount -= withdrawal;
 		std::cout << "amount:" << Account::checkAmount() << ";";
 		this->_nbWithdrawals++;
