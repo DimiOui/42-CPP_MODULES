@@ -2,7 +2,6 @@
 
 Zombie::Zombie()
 {
-	Zombie::getName(Zname);
 }
 
 Zombie::~Zombie()
