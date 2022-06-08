@@ -15,7 +15,7 @@ public:
     void            getName(std::string name);
 
 private:
-    std::string     Zname;
+    std::string     zName;
 };
 
 Zombie  *zombieHorde(int N, std::string name);

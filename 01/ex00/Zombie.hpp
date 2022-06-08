@@ -15,7 +15,7 @@ public:
     void            getName() const;
 
 private:
-    std::string     Zname;
+    std::string     zName;
 };
 
 Zombie  *newZombie(std::string name);
