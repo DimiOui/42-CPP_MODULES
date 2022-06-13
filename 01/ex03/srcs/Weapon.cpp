@@ -19,7 +19,7 @@ bool	Weapon::setType(std::string const &newType)
 		this->_type = newType;
 	else
 	{
-		std::wcerr << "Give him a weapon !" << std::endl;
+		std::cerr << "Give him a weapon !" << std::endl;
 		return (false);
 	}
 	return (true);

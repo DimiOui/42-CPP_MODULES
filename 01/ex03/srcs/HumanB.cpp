@@ -22,7 +22,7 @@ bool	HumanB::setWeapon(Weapon &newWeapon)
 		this->_weapon = &newWeapon;
 	else
 	{
-		std::wcerr << "Give him a weapon !" << std::endl;
+		std::cerr << "Give him a weapon !" << std::endl;
 		return (false);
 	}
 	return (true);
