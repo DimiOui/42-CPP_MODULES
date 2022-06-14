@@ -9,13 +9,14 @@ class Fixed
 {
 public:
     Fixed();
-    Fixed(const Fixed &obj);
-    ~Fixed();
+    Fixed(Fixed const &obj);
+    virtual ~Fixed();
 
-    Fixed               &operator = (Fixed const &obj);
+    Fixed               &operator=(Fixed const &obj);
 
     int                 getRawBits() const;
     void                setRawBits(int const raw);
+
 private:
     int                 _fixedValue;
     static int const    _bitsFract = 8;
