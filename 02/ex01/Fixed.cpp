@@ -10,18 +10,14 @@ Fixed::Fixed(int const iVal)
 {
 	std::cout << "Int constructor called" << std::endl;
 	this->_fixedValue = (iVal << Fixed::_bitsFract);
-	//this->_fixedValue = iVal;
 	return;
-	////////////////////////////////
 }
 
 Fixed::Fixed(float const fVal)
 {
 	std::cout << "Float constructor called" << std::endl;
-	//this->_fixedValue = roundf(fVal * (1 << Fixed::_bitsFract));
-	this->_fixedValue = fVal;
+	this->_fixedValue = roundf(fVal * (1 << Fixed::_bitsFract));
 	return;
-	////////////////////////////////
 }
 
 Fixed::Fixed(Fixed const &obj)
@@ -58,15 +54,12 @@ void	Fixed::setRawBits(int const raw)
 
 float	Fixed::toFloat() const
 {
-	//return ((float)this->_fixedValue / (float)(1 << Fixed::_bitsFract));
-	return ((float)this->_fixedValue);
-	////////////////////////////////
+	return ((float)this->_fixedValue / (float)(1 << Fixed::_bitsFract));
 }
 
 int		Fixed::toInt() const
 {
 	return (this->_fixedValue >> Fixed::_bitsFract);
-	////////////////////////////////
 }
 
 std::ostream	&operator<<(std::ostream &o, Fixed const &rhs)
