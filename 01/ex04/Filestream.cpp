@@ -54,6 +54,7 @@ bool	Filestream::replaceStr(std::string src, std::string dst)
 		{
 			result.erase(pos, src.length());
 			result.insert(pos, dst);
+			pos += dst.length() - 1;
 		}
 	}
 	this->outputFile(result);
