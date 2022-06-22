@@ -5,15 +5,31 @@
 
 int	main()
 {
+	std::cout << KCYN << "***********BASIC TESTS WITH DIAMONDTRAP***********\n";
 	DiamondTrap	faith("faith");
-
-	//faith.attack("Proofreader");
-	//faith.takeDamage(22);
-	//faith.beRepaired(14);
-	//faith.takeDamage(200);
+	faith.attack("Proofreader");
+	faith.takeDamage(22);
+	faith.beRepaired(14);
+	faith.takeDamage(200);
 	faith.whoAmI();
-	//std::cout << std::endl;
+	std::cout << std::endl;
 
+	std::cout << KCYN << "***********BASIC TESTS WITH COPY CONSTRUCTOR//OP OVERLOAD***********\n";
+	DiamondTrap gigi("Gigi");
+	gigi.attack("Proofreader");
+	gigi.takeDamage(15);
+	gigi.whoAmI();
+
+	std::cout << std::endl;
+	DiamondTrap twin(gigi);
+	twin.beRepaired(10);
+	twin.whoAmI();
+
+	std::cout << std::endl;
+	DiamondTrap intruder = twin;
+	intruder.takeDamage(82);
+	intruder.whoAmI();
+	std::cout << std::endl;
 	//ScavTrap	joy("Joy");
 
 	//joy.attack("Proofreader");

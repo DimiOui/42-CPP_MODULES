@@ -15,9 +15,6 @@ ScavTrap::ScavTrap(const std::string name)
 ScavTrap::ScavTrap(ScavTrap const &obj)
 {
 	*this = obj;
-	this->_hitPoints = 100;
-	this->_energyPoints = 50;
-	this->_attackDamage = 20;
 	std::cout << KYEL << "Claptrap " << getName() << " copy called" << std::endl;
 	return;
 }
@@ -31,6 +28,9 @@ ScavTrap::~ScavTrap()
 ScavTrap	&ScavTrap::operator=(ScavTrap const &obj)
 {
 	this->_name = obj.getName();
+	this->_hitPoints = obj._hitPoints;
+	this->_energyPoints = obj._energyPoints;
+	this->_attackDamage = obj._attackDamage;
 	return (*this);
 }
 

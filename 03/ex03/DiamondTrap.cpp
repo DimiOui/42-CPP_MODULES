@@ -13,12 +13,9 @@ DiamondTrap::DiamondTrap(const std::string name)
 	return;
 }
 
-DiamondTrap::DiamondTrap(DiamondTrap const &obj)
+DiamondTrap::DiamondTrap(DiamondTrap const &obj) : ClapTrap(obj), ScavTrap(obj), FragTrap(obj)
 {
 	*this = obj;
-	this->_hitPoints = FragTrap::_hitPoints;
-	this->_energyPoints = ScavTrap::_energyPoints;
-	this->_attackDamage = FragTrap::_attackDamage;
 	std::cout << KCYN << "Diamondtrap " << getName() << " copy called" << std::endl;
 	return;
 }
@@ -32,6 +29,9 @@ DiamondTrap::~DiamondTrap()
 DiamondTrap	&DiamondTrap::operator=(DiamondTrap const &obj)
 {
 	this->_name = obj.getName();
+	this->_hitPoints = obj._hitPoints;
+	this->_energyPoints = obj._energyPoints;
+	this->_attackDamage = obj._attackDamage;
 	return (*this);
 }
 

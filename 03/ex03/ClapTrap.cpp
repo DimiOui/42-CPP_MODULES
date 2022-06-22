@@ -32,6 +32,9 @@ ClapTrap::~ClapTrap()
 ClapTrap	&ClapTrap::operator=(ClapTrap const &obj)
 {
 	this->_name = obj.getName();
+	this->_hitPoints = obj._hitPoints;
+	this->_energyPoints = obj._energyPoints;
+	this->_attackDamage = obj._attackDamage;
 	return (*this);
 }
 
