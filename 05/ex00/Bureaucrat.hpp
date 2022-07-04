@@ -29,7 +29,6 @@ public:
     Bureaucrat          &operator=(Bureaucrat const &obj);
     const std::string   getName() const;
     int                 getGrade() const;
-    static std::string  traineeCounter();
 
     void                upgrade();
     void                downgrade();
@@ -37,7 +36,7 @@ public:
 private:
     const std::string   _name;
     int                 _grade;
-    //static int         _traineeCount;
+    static std::string  traineeCounter();
 
     class GradeTooHighException : public std::exception
     {
@@ -58,7 +57,6 @@ private:
     };
 };
 
-//int Bureaucrat::_traineeCount = 1;
 std::ostream    &operator<<(std::ostream &o, Bureaucrat const &i);
 
 #endif

@@ -11,6 +11,8 @@ int	main()
 		std::cout << Dave << std::endl;
 		Dave.upgrade();
 		std::cout << Dave << std::endl;
+		Bureaucrat	Copy(Dave);
+		std::cout << Copy << std::endl;
 	}
 	catch(const std::exception& e)
 	{
