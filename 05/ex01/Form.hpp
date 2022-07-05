@@ -41,28 +41,19 @@ public:
     class GradeTooHighException : public std::exception
     {
     public:
-        virtual const char* what() const throw()
-        {
-            return (KRED "Grade too high...");
-        }
+        virtual const char* what() const throw();
     };
 
     class GradeTooLowException : public std::exception
     {
     public:
-        virtual const char* what() const throw()
-        {
-            return (KRED "Grade too low...");
-        }
+        virtual const char* what() const throw();
     };
 
     class ExecFormException : public std::exception
     {
     public:
-        virtual const char* what() const throw()
-        {
-            return (KRED "Cannot execute Form...");
-        }
+        virtual const char* what() const throw();
     };
 };
 

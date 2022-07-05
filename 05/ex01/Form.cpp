@@ -29,7 +29,6 @@ Form::Form(Form const &obj) : _name(obj.getName()), _gradeToSign(obj.getSign()),
 		_gradeToExec(obj.getExec()), _isSigned(obj.getSignStatus())
 {
 	std::cout << KYEL "Form class copy constructor called." << std::endl;
-	*this = obj;
 	return;
 }
 
@@ -79,6 +78,21 @@ bool	Form::beSigned(const Bureaucrat &bureaucrat)
 		throw Form::GradeTooLowException();
 		return (false);
 	}
+}
+
+const char* Form::GradeTooHighException::what() const throw()
+{
+    return (KRED "Grade too high...");
+}
+
+const char* Form::GradeTooLowException::what() const throw()
+{
+    return (KRED "Grade too low...");
+}
+
+const char* Form::ExecFormException::what() const throw()
+{
+    return (KRED "Cannot execute form...");
 }
 
 std::ostream& operator<<(std::ostream& o, Form const &i)

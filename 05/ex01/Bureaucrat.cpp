@@ -44,7 +44,6 @@ Bureaucrat::Bureaucrat(const std::string name, int grade) : _name(name)
 Bureaucrat::Bureaucrat(Bureaucrat const &obj) : _name(obj.getName()), _grade(obj.getGrade())
 {
 	std::cout << KYEL "Bureaucrat class copy constructor called." << std::endl;
-	*this = obj;
 	return;
 }
 
@@ -151,6 +150,16 @@ std::string	Bureaucrat::traineeCounter()
 	toStr << count++;
 	strCount = toStr.str();
 	return (strCount);
+}
+
+const char* Bureaucrat::GradeTooHighException::what() const throw()
+{
+            return (KRED "Grade too high...");
+}
+
+const char* Bureaucrat::GradeTooLowException::what() const throw()
+{
+            return (KRED "Grade too low...");
 }
 
 std::ostream& operator<<(std::ostream& o, Bureaucrat const &i)
