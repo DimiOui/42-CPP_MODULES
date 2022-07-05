@@ -4,6 +4,7 @@
 #include <iostream>
 #include <stdexcept>
 #include <sstream>
+#include "Form.hpp"
 
 #pragma once
 
@@ -15,6 +16,8 @@
 #define KMAG "\x1B[35m"
 #define KCYN "\x1B[36m"
 #define KWHT "\x1B[37m"
+
+class Form;
 
 class Bureaucrat
 {
@@ -29,6 +32,8 @@ public:
     Bureaucrat          &operator=(Bureaucrat const &obj);
     const std::string   getName() const;
     int                 getGrade() const;
+    bool                signForm(Form &form) const;
+    bool                execForm(Form &form) const;
 
     void                upgrade();
     void                downgrade();

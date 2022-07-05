@@ -1,6 +1,6 @@
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() : _name(std::string("Trainee_") + traineeCounter())
+Bureaucrat::Bureaucrat() : _name("Trainee_" + traineeCounter())
 {
 	std::cout << KYEL "Default Bureaucrat class constructor called." << std::endl;
 	std::cout << KYEL "Name and grade given by default." << std::endl;
@@ -8,7 +8,7 @@ Bureaucrat::Bureaucrat() : _name(std::string("Trainee_") + traineeCounter())
 	return;
 }
 
-Bureaucrat::Bureaucrat(int grade) : _name(std::string("Trainee_") + traineeCounter())
+Bureaucrat::Bureaucrat(int grade) : _name("Trainee_" + traineeCounter())
 {
 	std::cout << KYEL "Grade Bureaucrat class constructor called." << std::endl;
 	std::cout << KYEL "Name given by default." << std::endl;
@@ -41,7 +41,7 @@ Bureaucrat::Bureaucrat(const std::string name, int grade) : _name(name)
 	return;
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat const &obj)
+Bureaucrat::Bureaucrat(Bureaucrat const &obj) : _name(obj.getName()), _grade(obj.getGrade())
 {
 	std::cout << KYEL "Bureaucrat class copy constructor called." << std::endl;
 	*this = obj;
@@ -57,7 +57,6 @@ Bureaucrat::~Bureaucrat()
 Bureaucrat &Bureaucrat::operator=(Bureaucrat const &obj)
 {
 	std::cout << KYEL "Assignement operator overload for Bureaucrat called." << std::endl;
-	std::cout << KMAG "Only grade was copied as name is a const value !"  << std::endl;
 	this->_grade = obj.getGrade();
 	return (*this);
 }
