@@ -14,7 +14,7 @@ clean:
 				$(RM) $(OBJS)
 
 fclean:			clean
-				$(RM) $(NAME)
+				$(RM) $(NAME) .depend
 
 re:				fclean all
 
@@ -22,3 +22,11 @@ $(NAME):		$(OBJS)
 				$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
 
 .PHONY:			all clean fclean re
+
+depend: .depend
+
+.depend: $(SRCS)
+		rm -f ./.depend
+		$(CC) $(CFLAGS) -MM $^>>./.depend;
+
+include .depend
