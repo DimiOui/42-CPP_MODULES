@@ -14,6 +14,7 @@ int	main()
 		double	b = a;						// Implicit promotion, C syntax
 		int		d = static_cast<int>(b);	// Explicit demotion C++ syntax
 	}
+	
 	{
 		Child1		a;
 
