@@ -32,6 +32,7 @@ public:
     void                addByItRange(std::vector<int>::iterator begin, std::vector<int>::iterator end);
     unsigned int        shortestSpan() const;
     unsigned int        longestSpan() const;
+    unsigned int        getMaxSize(void) const;
     unsigned int        getSize(void) const;
     std::vector<int>    getNumbers(void) const;
 
