@@ -25,3 +25,16 @@ int	main()
 	std::cout << c << std::endl;
 	return (0);
 }
+
+//static_cast : entre types de même famille. Il s'agit la plupart du temps d'expliciter
+//des conversions qui auraient pu être effectuées de manière implicite mais souvent avec un
+//avertissement du compilateur.
+
+//reinterpret_cast : entre types de familles différentes. Il s'agit simplement de dire au compilateur
+// « je sais que je manipule une donnée de type X, mais on va faire comme si elle était de type Y ».
+// De ce fait aucune donnée n'est physiquement modifiée, cet opérateur de conversion n'est qu'une
+// indication pour le compilateur.
+
+//dynamic_cast identifie à l'exécution le type réel de l'expression reçue au moyen des informations
+//de type à l'exécution. Cette fonctionnalité doit donc être activée dans votre compilateur pour
+//pouvoir utiliser dynamic_cast, ce qui n'est pas le cas par défaut avec certains compilateurs
