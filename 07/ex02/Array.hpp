@@ -10,15 +10,13 @@ template<typename T>
 class Array
 {
 public:
-    Array<T>() : _size(0), _array(NULL) {};
-    Array<T>(unsigned int size) : _size(size)
+    Array<T>() : _size(0), _array(NULL) {}
+    Array<T>(size_t size) : _size(size), _array(new T[_size]) {}
+    Array<T>(const Array<T> &src) : _size(src._size), _array(new T[src._size])
     {
-        this->_size = size;
-        if (size < 0)
-            throw wrongIndex();
-        this->_array = new T[size];
+        for (size_t i = 0; i != this->_size; ++i)
+            this->_array[i] = src._array[i];
     }
-    Array<T>(const Array<T> &src) {*this = src;}
     Array<T>    &operator=(const Array<T> &obj)
     {
         if (this != &obj)
@@ -27,21 +25,19 @@ public:
                 delete [] this->_array;
             this->_size = obj.size();
             this->_array = new T[this->_size];
-            for (unsigned int i = 0; i < this->_size; i++)
+            for (size_t i = 0; i < this->_size; i++)
                 this->_array[i] = obj[i];
         }
         return (*this);
-
     }
-    T   &operator[](const unsigned int i) const
+    T   &operator[](const size_t i) const
     {
         if (i >= this->_size || i < 0)
             throw wrongIndex();
         return (this->_array[i]);
     }
-    ~Array<T>() { delete [] this->_array;}
-
-    unsigned int    size() const {return this->_size;}
+    ~Array<T>() {delete [] this->_array;}
+    size_t size() const {return this->_size;}
 
     class wrongIndex: public std::exception
     {
