@@ -22,19 +22,19 @@
 class Span
 {
 public:
-    Span(void);
-    Span(unsigned int size);
+    Span(unsigned int const &size = 0);
     Span(Span const &obj);
     virtual ~Span();
 
     Span                &operator=(Span const &obj);
-    void                addNumber(unsigned int n);
-    void                addByItRange(std::vector<int>::iterator begin, std::vector<int>::iterator end);
+    void                addNumber(unsigned int &n);
+    void                addByItRange(std::vector<int>::const_iterator begin, std::vector<int>::const_iterator end);
     unsigned int        shortestSpan() const;
     unsigned int        longestSpan() const;
     unsigned int        getMaxSize(void) const;
     unsigned int        getSize(void) const;
     std::vector<int>    getNumbers(void) const;
+    void printVect() const;
 
 private:
     unsigned int        _size;
